@@ -22,3 +22,5 @@ exit1
 else
 echo "Installing git is success"
 fi
+fi
+fi
