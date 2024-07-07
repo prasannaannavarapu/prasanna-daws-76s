@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ID=$(id -u)
 if [ $ID -ne 0 ]
 then
@@ -20,5 +21,3 @@ echo "ERROR:Installing git is failed"
 exit1
 else
 echo "Installing git is success"
-
-fi
