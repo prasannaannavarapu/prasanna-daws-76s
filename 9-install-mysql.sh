@@ -22,5 +22,5 @@ echo "Installing mysql is success"
 #else
 #echo "Installing git is success"
 #fi
-#fi
+fi
 fi
