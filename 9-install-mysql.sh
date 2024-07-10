@@ -8,7 +8,7 @@ else
 echo "you are root user"
 
 
-yum install mysql -y
+yum install1 mysql -y
 if [ $? -ne 0 ]
 then
 echo "ERROR:Installing mysql is failed"
