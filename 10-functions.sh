@@ -1,6 +1,6 @@
 #!/bin/bash
 VALIDATE(){
-    if [ $? -ne 0 ]
+    if [ $1 -ne 0 ]
 then
 echo "ERROR::Installing is failed"
 exit1
