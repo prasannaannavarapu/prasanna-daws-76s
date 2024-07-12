@@ -3,34 +3,33 @@ ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
-TIMESTAMP=$(date +%F-%H-%M-%S)
-LOGFILE=/tmp/
-LOGFILE="tmp/$0-$TIMESTAMP.log"
-echo "script started execting at $TIMESTAMP" &> $LOGFILE
+TIME_STAMP=$(date +%F-%H-%M-%S)
+LOG_FILE="tmp/$0-$TIMESTAMP.log"
+echo "script started execting at $TIME_STAMP" &> $LOG_FILE
 VALIDATE(){
-    if [ $1 -ne 0 ]
+if [ $1 -ne 0 ]
 then
-echo -e "$2..$Rfailed$N"
-exit1
+    echo -e "$2 ... $R failed $N"
+    exit1
 else
-echo -e "$2..$Gsuccess$N"
+   echo -e "$2 .. $G success $N"
 fi
 }
 if [ $ID -ne 0 ]
 then
-echo -e "$RERROR::Please run this script with root access$N"
+echo -e "$R ERROR::Please run this script with root access $N"
 exit1
 else
 echo You are root user
 fi
 for package in $@ 
 do 
-yum list installed $package &> $LOGFILE
+yum list installed $package &> $LOG_FILE
 if [ $? -ne 0 ]
 then
 yum install $package -y
 VALIDATE $? "Installing of  $package"
 else
-echo -e "$package is already installed...$YSKIPPING$N"
+echo -e "$package is already installed...$Y SKIPPING $N"
 fi
 done
