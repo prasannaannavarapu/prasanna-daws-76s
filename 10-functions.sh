@@ -1,17 +1,17 @@
 #!/bin/bash
 VALIDATE(){
-    if [ $1 -ne 0 ]
+if [ $1 -ne 0 ]
 then
-echo "ERROR::Installing is failed"
-exit1
+   echo "ERROR::Installation is failed"
+   exit 1
 else
-echo "Installing is success"
+    echo "Installation is success"
 fi
 }
 if [ $? -ne 0 ]
 then
 echo "ERROR::Please run this script with root access"
-exit1
+exit 1
 else
 echo "You are root user"
 fi
